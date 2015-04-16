@@ -12,7 +12,9 @@
 		FC34FEA01AD0549B0034C819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34FE9E1AD0549B0034C819 /* Main.storyboard */; };
 		FC34FEA21AD0549B0034C819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA11AD0549B0034C819 /* Images.xcassets */; };
 		FC34FEA51AD0549B0034C819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA31AD0549B0034C819 /* LaunchScreen.xib */; };
-		FC34FEB11AD0549B0034C819 /* PeintoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEB01AD0549B0034C819 /* PeintoTests.swift */; };
+		FC34FEBB1AD055B00034C819 /* SketchGetHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */; };
+		FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */; };
+		FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +37,9 @@
 		FC34FEA41AD0549B0034C819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FC34FEAA1AD0549B0034C819 /* PeintoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeintoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34FEAF1AD0549B0034C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC34FEB01AD0549B0034C819 /* PeintoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeintoTests.swift; sourceTree = "<group>"; };
+		FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandlerTests.swift; sourceTree = "<group>"; };
+		FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandler.swift; sourceTree = "<group>"; };
+		FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,10 @@
 		FC34FE971AD0549B0034C819 /* Peinto */ = {
 			isa = PBXGroup;
 			children = (
+				FC34FEBC1AD057CF0034C819 /* Handlers */,
 				FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */,
 				FC34FE9C1AD0549B0034C819 /* ViewController.swift */,
+				FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */,
 				FC34FE9E1AD0549B0034C819 /* Main.storyboard */,
 				FC34FEA11AD0549B0034C819 /* Images.xcassets */,
 				FC34FEA31AD0549B0034C819 /* LaunchScreen.xib */,
@@ -98,8 +104,8 @@
 		FC34FEAD1AD0549B0034C819 /* PeintoTests */ = {
 			isa = PBXGroup;
 			children = (
-				FC34FEB01AD0549B0034C819 /* PeintoTests.swift */,
 				FC34FEAE1AD0549B0034C819 /* Supporting Files */,
+				FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */,
 			);
 			path = PeintoTests;
 			sourceTree = "<group>";
@@ -110,6 +116,15 @@
 				FC34FEAF1AD0549B0034C819 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC34FEBC1AD057CF0034C819 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */,
+			);
+			name = Handlers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */,
 				FC34FE9D1AD0549B0034C819 /* ViewController.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
+				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC34FEB11AD0549B0034C819 /* PeintoTests.swift in Sources */,
+				FC34FEBB1AD055B00034C819 /* SketchGetHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +426,7 @@
 				FC34FEB61AD0549B0034C819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC34FEB71AD0549B0034C819 /* Build configuration list for PBXNativeTarget "PeintoTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +435,7 @@
 				FC34FEB91AD0549B0034C819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
