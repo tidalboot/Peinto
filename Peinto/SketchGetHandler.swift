@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 public class SketchGetHandler {
-    
-//    public var sketchData: NSObject!
-    
+        
     public init () {
         
     }
@@ -25,19 +23,12 @@ public class SketchGetHandler {
         let getDataTask = apiSession.dataTaskWithURL(api!,
             completionHandler: {(data, response, error) -> Void in
                 var sketches: NSMutableArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSMutableArray
-
-            
-//                println("\(sketches)")
-//                var sketchToReturn = NSData(contentsOfURL: sketchURL!)
-//                println("fair enough")
                 return callback(sketches: sketches)
         })
-        
         getDataTask.resume()
     }
     
     public func parseImagesFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
-        
         var arrayToReturn: NSMutableArray = []
         
         for sketch in arrayOfSketches {
@@ -48,7 +39,6 @@ public class SketchGetHandler {
         }
         println("\(arrayToReturn.count)")
         return arrayToReturn
-//        var sketchDictionary = sketches[0] as! NSDictionary
     }
     
     
