@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var sketchImage: UIImageView!
+    @IBOutlet var sketchImage2: UIImageView!
+
     let sketchGetHandler = SketchGetHandler()
     
     override func viewDidLoad() {
@@ -25,12 +27,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func requestedSketch(sender: AnyObject) {
-        sketchGetHandler.getSketchImages(1, callback: sketchViewUpdate)
+       sketchGetHandler.getSketches(4, callback: sketchViewUpdate)
     }
     
-    func sketchViewUpdate (sketch: NSData) {
+    func sketchViewUpdate (sketches: NSMutableArray) {
+        
+        var sketchImages = sketchGetHandler.parseImagesFromSketchArray(sketches)
+        
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.sketchImage.image = UIImage(data: sketch)
+            self.sketchImage.image = UIImage(data: sketchImages[0] as! NSData)
+            self.sketchImage2.image = UIImage(data: sketchImages[1] as! NSData)
         })
     }
 

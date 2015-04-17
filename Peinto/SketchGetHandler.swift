@@ -17,32 +17,38 @@ public class SketchGetHandler {
         
     }
     
-    public func getSketchImages (numberOfSketchesToReturn: Int, callback: (sketches: NSData) -> ()) {
+    public func getSketches (numberOfSketchesToReturn: Int, callback: (sketches: NSMutableArray) -> ()) {
         let apiPath = "http://www.peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)"
         let api = NSURL(string: apiPath)
         let apiSession = NSURLSession.sharedSession()
         
         let getDataTask = apiSession.dataTaskWithURL(api!,
             completionHandler: {(data, response, error) -> Void in
-                var sketches: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSArray
-                
-//                var sketchArray = []
-                
-//                for sketch in sketches {
-                    var sketchDictionary = sketches[0] as! NSDictionary
-                    var sketchString:String  = sketchDictionary["ImageUrl"] as! String
-                    var sketchURL = NSURL(string: "\(sketchString)")
-//                }
-                
-                
+                var sketches: NSMutableArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSMutableArray
 
-                
-                var sketchToReturn = NSData(contentsOfURL: sketchURL!)
-                println("fair enough")
-                return callback(sketches: sketchToReturn!)
+            
+//                println("\(sketches)")
+//                var sketchToReturn = NSData(contentsOfURL: sketchURL!)
+//                println("fair enough")
+                return callback(sketches: sketches)
         })
         
         getDataTask.resume()
+    }
+    
+    public func parseImagesFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
+        
+        var arrayToReturn: NSMutableArray = []
+        
+        for sketch in arrayOfSketches {
+            var sketchString:String  = sketch["ImageUrl"] as! String
+            var sketchURL = NSURL(string: "\(sketchString)")
+            var sketchImageAsData = NSData(contentsOfURL: sketchURL!)
+            arrayToReturn.addObject(sketchImageAsData!)
+        }
+        println("\(arrayToReturn.count)")
+        return arrayToReturn
+//        var sketchDictionary = sketches[0] as! NSDictionary
     }
     
     

@@ -15,6 +15,7 @@
 		FC34FEBB1AD055B00034C819 /* SketchGetHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */; };
 		FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */; };
 		FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */; };
+		FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandlerTests.swift; sourceTree = "<group>"; };
 		FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandler.swift; sourceTree = "<group>"; };
 		FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewController.swift; sourceTree = "<group>"; };
+		FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */,
+				FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */,
 			);
 			name = Handlers;
 			path = ..;
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */,
+				FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */,
 				FC34FE9D1AD0549B0034C819 /* ViewController.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
 				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,

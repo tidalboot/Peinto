@@ -8,13 +8,31 @@
 
 import UIKit
 
-class SketchCollectionViewController: UIViewController {
-
-    let sketchGetHandler = SketchGetHandler()
-    private let cellReuseIdentifier = "SketchCell"
-
-    
-//    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//            return 10
+//class SketchCollectionViewController: UICollectionViewController {
+//
+//    let sketchGetHandler = SketchGetHandler()
+//    private let cellReuseIdentifier = "SketchCell"
+//    
+//    var returnedSketches: NSData!
+//    
+//    override func viewDidLoad() {
+//        returnedSketches = sketchGetHandler.getSketchImages(1, callback: )
 //    }
-}
+//
+//    
+//    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+//            return 1
+//    }
+//    
+//    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 10
+//    }
+//    
+//    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        let sketchCell = collectionView.dequeueReusableCellWithReuseIdentifier("sketchCell", forIndexPath: indexPath) as! SketchCell
+//        
+//        sketchCell.sketchView.image =
+//        
+//        return sketchCell
+//    }
+//}

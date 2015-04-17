@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yem-vI-yuv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3mJ-9b-mhe">
-                                <rect key="frame" x="60" y="184" width="200" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0WT-l3-2PN"/>
-                                    <constraint firstAttribute="height" constant="200" id="bIU-6Z-Ee1"/>
+                                    <constraint firstAttribute="width" constant="150" id="0WT-l3-2PN"/>
+                                    <constraint firstAttribute="height" constant="150" id="bIU-6Z-Ee1"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1o-PI-6Lc">
-                                <rect key="frame" x="107" y="392" width="108" height="34"/>
+                                <rect key="frame" x="106" y="267" width="108" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Get Sketches!">
                                     <color key="titleColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,22 +35,93 @@
                                     <action selector="requestedSketch:" destination="yem-vI-yuv" eventType="touchUpInside" id="0dX-cM-ilu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1g-ee-h6K">
+                                <rect key="frame" x="125" y="340" width="71" height="30"/>
+                                <state key="normal" title="Next page">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GS1-FR-JyR" kind="modal" id="soI-QA-LaU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kdY-HI-FDz">
+                                <rect key="frame" x="170" y="0.0" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="SqS-Je-KSH"/>
+                                    <constraint firstAttribute="height" constant="150" id="m6G-3f-6VR"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="3mJ-9b-mhe" secondAttribute="centerX" id="Br0-hr-tv9"/>
-                            <constraint firstAttribute="centerY" secondItem="3mJ-9b-mhe" secondAttribute="centerY" id="KgT-OG-6tG"/>
+                            <constraint firstItem="3mJ-9b-mhe" firstAttribute="top" secondItem="ZG4-e9-0DF" secondAttribute="topMargin" id="Bdb-nt-2AL"/>
+                            <constraint firstAttribute="centerY" secondItem="P1o-PI-6Lc" secondAttribute="centerY" id="P3z-XU-h13"/>
+                            <constraint firstItem="kdY-HI-FDz" firstAttribute="top" secondItem="ZG4-e9-0DF" secondAttribute="topMargin" id="X9l-U3-FVz"/>
+                            <constraint firstAttribute="centerX" secondItem="v1g-ee-h6K" secondAttribute="centerX" constant="-0.5" id="iuw-5D-KQa"/>
                             <constraint firstAttribute="centerX" secondItem="P1o-PI-6Lc" secondAttribute="centerX" constant="-0.5" id="kww-rB-IJy"/>
-                            <constraint firstItem="P1o-PI-6Lc" firstAttribute="top" secondItem="3mJ-9b-mhe" secondAttribute="bottom" constant="8" id="sJb-WG-ztO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kdY-HI-FDz" secondAttribute="trailing" constant="-16" id="njf-lP-ChQ"/>
+                            <constraint firstItem="v1g-ee-h6K" firstAttribute="top" secondItem="P1o-PI-6Lc" secondAttribute="bottom" constant="39" id="v6p-ok-DBg"/>
+                            <constraint firstItem="3mJ-9b-mhe" firstAttribute="leading" secondItem="ZG4-e9-0DF" secondAttribute="leadingMargin" constant="-16" id="zEp-C6-nBV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="sketchImage" destination="3mJ-9b-mhe" id="XRQ-KP-bh9"/>
+                        <outlet property="sketchImage2" destination="kdY-HI-FDz" id="EHq-yZ-tDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iP-q7-FpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="219"/>
+            <point key="canvasLocation" x="1728" y="210"/>
+        </scene>
+        <!--Sketch Collection View Controller-->
+        <scene sceneID="YVj-MP-xrS">
+            <objects>
+                <collectionViewController id="GS1-FR-JyR" customClass="SketchCollectionViewController" customModule="Peinto" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BM2-iJ-IxY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="98a-Dt-Rfg">
+                            <size key="itemSize" width="150" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sketchCell" id="E2r-uI-7u3" customClass="SketchCell" customModule="Peinto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-7E-gA6">
+                                            <rect key="frame" x="8" y="8" width="134" height="134"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ySR-7E-gA6" secondAttribute="bottom" id="LQv-E7-YPA"/>
+                                    <constraint firstItem="ySR-7E-gA6" firstAttribute="top" secondItem="E2r-uI-7u3" secondAttribute="topMargin" id="T93-bp-YxE"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ySR-7E-gA6" secondAttribute="trailing" id="sIq-Rd-14V"/>
+                                    <constraint firstItem="ySR-7E-gA6" firstAttribute="leading" secondItem="E2r-uI-7u3" secondAttribute="leadingMargin" id="t2P-JJ-0GH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="sketchView" destination="ySR-7E-gA6" id="rJg-TB-XoM"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="GS1-FR-JyR" id="Dy0-7f-xnz"/>
+                            <outlet property="delegate" destination="GS1-FR-JyR" id="n7b-cc-PqY"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="fiU-yM-ftc"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dD-aV-gXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2201" y="215"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
