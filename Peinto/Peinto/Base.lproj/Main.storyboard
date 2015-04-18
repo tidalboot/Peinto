@@ -1,78 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yem-vI-yuv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GS1-FR-JyR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="yzP-Nh-lFm">
-            <objects>
-                <viewController id="yem-vI-yuv" customClass="ViewController" customModule="Peinto" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NDG-K7-zm7"/>
-                        <viewControllerLayoutGuide type="bottom" id="7Sp-bZ-9Oj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZG4-e9-0DF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3mJ-9b-mhe">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="0WT-l3-2PN"/>
-                                    <constraint firstAttribute="height" constant="150" id="bIU-6Z-Ee1"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1o-PI-6Lc">
-                                <rect key="frame" x="106" y="267" width="108" height="34"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Get Sketches!">
-                                    <color key="titleColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="requestedSketch:" destination="yem-vI-yuv" eventType="touchUpInside" id="0dX-cM-ilu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1g-ee-h6K">
-                                <rect key="frame" x="125" y="340" width="71" height="30"/>
-                                <state key="normal" title="Next page">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="GS1-FR-JyR" kind="modal" id="soI-QA-LaU"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kdY-HI-FDz">
-                                <rect key="frame" x="170" y="0.0" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="SqS-Je-KSH"/>
-                                    <constraint firstAttribute="height" constant="150" id="m6G-3f-6VR"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3mJ-9b-mhe" firstAttribute="top" secondItem="ZG4-e9-0DF" secondAttribute="topMargin" id="Bdb-nt-2AL"/>
-                            <constraint firstAttribute="centerY" secondItem="P1o-PI-6Lc" secondAttribute="centerY" id="P3z-XU-h13"/>
-                            <constraint firstItem="kdY-HI-FDz" firstAttribute="top" secondItem="ZG4-e9-0DF" secondAttribute="topMargin" id="X9l-U3-FVz"/>
-                            <constraint firstAttribute="centerX" secondItem="v1g-ee-h6K" secondAttribute="centerX" constant="-0.5" id="iuw-5D-KQa"/>
-                            <constraint firstAttribute="centerX" secondItem="P1o-PI-6Lc" secondAttribute="centerX" constant="-0.5" id="kww-rB-IJy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kdY-HI-FDz" secondAttribute="trailing" constant="-16" id="njf-lP-ChQ"/>
-                            <constraint firstItem="v1g-ee-h6K" firstAttribute="top" secondItem="P1o-PI-6Lc" secondAttribute="bottom" constant="39" id="v6p-ok-DBg"/>
-                            <constraint firstItem="3mJ-9b-mhe" firstAttribute="leading" secondItem="ZG4-e9-0DF" secondAttribute="leadingMargin" constant="-16" id="zEp-C6-nBV"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="sketchImage" destination="3mJ-9b-mhe" id="XRQ-KP-bh9"/>
-                        <outlet property="sketchImage2" destination="kdY-HI-FDz" id="EHq-yZ-tDr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0iP-q7-FpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1728" y="210"/>
-        </scene>
         <!--Sketch Collection View Controller-->
         <scene sceneID="YVj-MP-xrS">
             <objects>

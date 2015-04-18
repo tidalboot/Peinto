@@ -32,8 +32,8 @@ public class SketchGetHandler {
         var arrayToReturn: NSMutableArray = []
         
         for sketch in arrayOfSketches {
-            var sketchString:String  = sketch["ImageUrl"] as! String
-            var sketchURL = NSURL(string: "\(sketchString)")
+            var sketchString = sketch["ImageUrl"] as! String
+            var sketchURL = NSURL(string: sketchString)
             var sketchImageAsData = NSData(contentsOfURL: sketchURL!)
             arrayToReturn.addObject(sketchImageAsData!)
         }

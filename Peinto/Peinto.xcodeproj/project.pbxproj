@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */; };
-		FC34FE9D1AD0549B0034C819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FE9C1AD0549B0034C819 /* ViewController.swift */; };
 		FC34FEA01AD0549B0034C819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34FE9E1AD0549B0034C819 /* Main.storyboard */; };
 		FC34FEA21AD0549B0034C819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA11AD0549B0034C819 /* Images.xcassets */; };
 		FC34FEA51AD0549B0034C819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA31AD0549B0034C819 /* LaunchScreen.xib */; };
@@ -32,7 +31,6 @@
 		FC34FE951AD0549B0034C819 /* Peinto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peinto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34FE991AD0549B0034C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC34FE9C1AD0549B0034C819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC34FE9F1AD0549B0034C819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC34FEA11AD0549B0034C819 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC34FEA41AD0549B0034C819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 			children = (
 				FC34FEBC1AD057CF0034C819 /* Handlers */,
 				FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */,
-				FC34FE9C1AD0549B0034C819 /* ViewController.swift */,
 				FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */,
 				FC34FE9E1AD0549B0034C819 /* Main.storyboard */,
 				FC34FEA11AD0549B0034C819 /* Images.xcassets */,
@@ -232,7 +229,6 @@
 			files = (
 				FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */,
 				FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */,
-				FC34FE9D1AD0549B0034C819 /* ViewController.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
 				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,
 			);

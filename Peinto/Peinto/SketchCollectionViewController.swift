@@ -17,11 +17,11 @@ class SketchCollectionViewController: UICollectionViewController {
     var imageDataToUse: NSMutableArray!
     
     override func viewDidLoad() {
-        sketchGetHandler.getSketches(8, callback: updateImageArray)
+        sketchGetHandler.getSketches(14, callback: updateImageArray)
     }
 
     func updateImageArray (sketches: NSMutableArray) {
-         imageDataToUse = sketchGetHandler.parseImagesFromSketchArray(sketches)
+        imageDataToUse = sketchGetHandler.parseImagesFromSketchArray(sketches)
         println("\(imageDataToUse.count)")
         numberOfCellsToLoad = imageDataToUse.count
         
