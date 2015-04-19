@@ -15,8 +15,9 @@ public class SketchGetHandler {
         
     }
     
-    public func getSketches (numberOfSketchesToReturn: Int, callback: (sketches: NSMutableArray) -> ()) {
-        let apiPath = "http://www.peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)"
+    public func getSketches (numberOfSketchesToReturn: Int, fromDate: String, callback: (sketches: NSMutableArray) -> ()) {
+        let apiPath = "http://www.peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)&toDate=\(fromDate)"
+        println("\(apiPath)")
         let api = NSURL(string: apiPath)
         let apiSession = NSURLSession.sharedSession()
         
@@ -37,8 +38,16 @@ public class SketchGetHandler {
             var sketchImageAsData = NSData(contentsOfURL: sketchURL!)
             arrayToReturn.addObject(sketchImageAsData!)
         }
-        println("\(arrayToReturn.count)")
+//        println("\(arrayToReturn.count)")
         return arrayToReturn
+    }
+    
+    public func getLastDateFromSketchArray (arrayOfSketches: NSMutableArray) -> String {
+        var arraySize = arrayOfSketches.count
+        var oldestSketch = arrayOfSketches[arraySize - 1] as! NSDictionary
+        var dateToReturn = oldestSketch["CreatedDate"] as! String
+        
+        return dateToReturn
     }
     
     
