@@ -38,17 +38,38 @@ public class SketchGetHandler {
             var sketchImageAsData = NSData(contentsOfURL: sketchURL!)
             arrayToReturn.addObject(sketchImageAsData!)
         }
-//        println("\(arrayToReturn.count)")
         return arrayToReturn
     }
     
-    public func getLastDateFromSketchArray (arrayOfSketches: NSMutableArray) -> String {
+    func parseDatesFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
+        var arrayToReturn: NSMutableArray = []
+        
+        for sketch in arrayOfSketches {
+            var sketchDate: NSString = sketch["CreatedDate"] as! String
+            sketchDate = sketchDate.substringToIndex(10)
+            arrayToReturn.addObject(sketchDate)
+        }
+        return arrayToReturn
+    }
+    
+    func parseHeartsFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
+        var arrayToReturn: NSMutableArray = []
+        
+        for sketch in arrayOfSketches {
+            var sketchHearts = sketch["HeartCount"] as! Int
+            arrayToReturn.addObject(sketchHearts)
+        }
+        
+        return arrayToReturn
+    }
+
+    
+    func getLastDateFromSketchArray (arrayOfSketches: NSMutableArray) -> String {
         var arraySize = arrayOfSketches.count
         var oldestSketch = arrayOfSketches[arraySize - 1] as! NSDictionary
         var dateToReturn = oldestSketch["CreatedDate"] as! String
         
         return dateToReturn
     }
-    
     
 }

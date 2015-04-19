@@ -10,4 +10,6 @@ import UIKit
 
 class SketchCell: UICollectionViewCell {
     @IBOutlet var sketchView: UIImageView!
+    @IBOutlet var dateCreatedLabel: UILabel!
+    @IBOutlet var heartLabel: UILabel!
 }
