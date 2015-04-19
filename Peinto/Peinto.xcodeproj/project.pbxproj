@@ -10,11 +10,12 @@
 		FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */; };
 		FC34FEA01AD0549B0034C819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34FE9E1AD0549B0034C819 /* Main.storyboard */; };
 		FC34FEA21AD0549B0034C819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA11AD0549B0034C819 /* Images.xcassets */; };
-		FC34FEA51AD0549B0034C819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA31AD0549B0034C819 /* LaunchScreen.xib */; };
 		FC34FEBB1AD055B00034C819 /* SketchGetHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */; };
 		FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */; };
 		FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */; };
 		FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */; };
+		FC7F66321AE44FCD0074D23B /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F66311AE44FCD0074D23B /* LaunchScreenController.swift */; };
+		FC7F66381AE456CB0074D23B /* Peinto_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F66371AE456CB0074D23B /* Peinto_Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +34,14 @@
 		FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC34FE9F1AD0549B0034C819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC34FEA11AD0549B0034C819 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FC34FEA41AD0549B0034C819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FC34FEAA1AD0549B0034C819 /* PeintoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeintoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34FEAF1AD0549B0034C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC34FEBA1AD055B00034C819 /* SketchGetHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandlerTests.swift; sourceTree = "<group>"; };
 		FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandler.swift; sourceTree = "<group>"; };
 		FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewController.swift; sourceTree = "<group>"; };
 		FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCell.swift; sourceTree = "<group>"; };
+		FC7F66311AE44FCD0074D23B /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		FC7F66371AE456CB0074D23B /* Peinto_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Peinto_Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +83,12 @@
 		FC34FE971AD0549B0034C819 /* Peinto */ = {
 			isa = PBXGroup;
 			children = (
+				FC7F66361AE456C10074D23B /* Images */,
+				FC7F66301AE44FB60074D23B /* ViewControllers */,
 				FC34FEBC1AD057CF0034C819 /* Handlers */,
 				FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */,
-				FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */,
 				FC34FE9E1AD0549B0034C819 /* Main.storyboard */,
 				FC34FEA11AD0549B0034C819 /* Images.xcassets */,
-				FC34FEA31AD0549B0034C819 /* LaunchScreen.xib */,
 				FC34FE981AD0549B0034C819 /* Supporting Files */,
 			);
 			path = Peinto;
@@ -125,6 +127,23 @@
 			);
 			name = Handlers;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		FC7F66301AE44FB60074D23B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */,
+				FC7F66311AE44FCD0074D23B /* LaunchScreenController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FC7F66361AE456C10074D23B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FC7F66371AE456CB0074D23B /* Peinto_Logo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7F66381AE456CB0074D23B /* Peinto_Logo.png in Resources */,
 				FC34FEA01AD0549B0034C819 /* Main.storyboard in Resources */,
-				FC34FEA51AD0549B0034C819 /* LaunchScreen.xib in Resources */,
 				FC34FEA21AD0549B0034C819 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +248,7 @@
 			files = (
 				FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */,
 				FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */,
+				FC7F66321AE44FCD0074D23B /* LaunchScreenController.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
 				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,
 			);
@@ -259,14 +279,6 @@
 				FC34FE9F1AD0549B0034C819 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FC34FEA31AD0549B0034C819 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC34FEA41AD0549B0034C819 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

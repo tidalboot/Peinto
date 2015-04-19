@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GS1-FR-JyR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gwg-cU-0G3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Launch Screen Controller-->
+        <scene sceneID="rZV-tb-WOU">
+            <objects>
+                <viewController id="Gwg-cU-0G3" customClass="LaunchScreenController" customModule="Peinto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cHM-T4-Lzj"/>
+                        <viewControllerLayoutGuide type="bottom" id="gXl-Xu-f1s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dmD-Ty-PTz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P E I N T O" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-nG-VYF">
+                                <rect key="frame" x="11" y="246" width="298" height="76"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6w-Vt-9eK" userLabel="Top Filler">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0fK-PJ-tDe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHH-sM-iKR" userLabel="Bottom Filler">
+                                <rect key="frame" x="0.0" y="468" width="320" height="100"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="COr-DN-mjQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gf-LW-B5B">
+                                <rect key="frame" x="110" y="341" width="100" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start browsing">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GS1-FR-JyR" kind="modal" modalTransitionStyle="crossDissolve" id="on5-UL-jJb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="g6d-nG-VYF" secondAttribute="centerX" id="0jq-dk-tng"/>
+                            <constraint firstItem="y6w-Vt-9eK" firstAttribute="width" secondItem="dmD-Ty-PTz" secondAttribute="width" id="Fx7-Oq-7cR"/>
+                            <constraint firstItem="gXl-Xu-f1s" firstAttribute="top" secondItem="CHH-sM-iKR" secondAttribute="bottom" id="NKJ-tM-sLJ"/>
+                            <constraint firstAttribute="centerX" secondItem="3gf-LW-B5B" secondAttribute="centerX" id="S3t-5M-ibm"/>
+                            <constraint firstItem="3gf-LW-B5B" firstAttribute="top" secondItem="g6d-nG-VYF" secondAttribute="bottom" constant="19" id="ZQ7-B1-UtW"/>
+                            <constraint firstAttribute="centerX" secondItem="CHH-sM-iKR" secondAttribute="centerX" id="djY-hR-mpD"/>
+                            <constraint firstAttribute="centerX" secondItem="y6w-Vt-9eK" secondAttribute="centerX" id="hg9-4v-0MM"/>
+                            <constraint firstItem="CHH-sM-iKR" firstAttribute="width" secondItem="dmD-Ty-PTz" secondAttribute="width" id="nUl-BL-pnE"/>
+                            <constraint firstAttribute="centerY" secondItem="g6d-nG-VYF" secondAttribute="centerY" id="sMf-1S-EB3"/>
+                            <constraint firstItem="y6w-Vt-9eK" firstAttribute="top" secondItem="cHM-T4-Lzj" secondAttribute="bottom" id="uep-dA-jaY"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="mainView" destination="dmD-Ty-PTz" id="QYh-07-5jc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unA-NT-KCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="218"/>
+        </scene>
         <!--Sketch Collection View Controller-->
         <scene sceneID="YVj-MP-xrS">
             <objects>
@@ -11,8 +85,9 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BM2-iJ-IxY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="98a-Dt-Rfg">
-                            <size key="itemSize" width="250" height="250"/>
+                            <size key="itemSize" width="250" height="303"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -22,25 +97,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="303"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-7E-gA6">
-                                            <rect key="frame" x="0.0" y="1" width="250" height="250"/>
+                                            <rect key="frame" x="0.0" y="28" width="250" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="250" id="DGY-Br-7yI"/>
                                                 <constraint firstAttribute="height" constant="250" id="bbd-gT-BKb"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----------------------------------------" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-vB-0b0">
+                                            <rect key="frame" x="-9" y="282" width="268" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="ySR-7E-gA6" secondAttribute="centerY" constant="-1" id="YZr-gO-Cfm"/>
+                                    <constraint firstItem="wvb-vB-0b0" firstAttribute="top" secondItem="ySR-7E-gA6" secondAttribute="bottom" constant="4" id="YiA-o0-KkJ"/>
+                                    <constraint firstAttribute="centerX" secondItem="wvb-vB-0b0" secondAttribute="centerX" id="n4d-J6-2LD"/>
                                     <constraint firstAttribute="centerX" secondItem="ySR-7E-gA6" secondAttribute="centerX" id="vjJ-X1-YFL"/>
+                                    <constraint firstItem="ySR-7E-gA6" firstAttribute="top" secondItem="E2r-uI-7u3" secondAttribute="topMargin" constant="20" id="z4F-Rb-p8T"/>
                                 </constraints>
-                                <size key="customSize" width="250" height="250"/>
+                                <size key="customSize" width="250" height="303"/>
                                 <connections>
                                     <outlet property="sketchView" destination="ySR-7E-gA6" id="rJg-TB-XoM"/>
                                 </connections>
@@ -55,7 +138,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dD-aV-gXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2201" y="215"/>
+            <point key="canvasLocation" x="2288" y="218"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -63,4 +146,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
