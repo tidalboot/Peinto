@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GS1-FR-JyR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Sketch Collection View Controller-->
@@ -13,32 +12,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="98a-Dt-Rfg">
-                            <size key="itemSize" width="150" height="150"/>
+                            <size key="itemSize" width="250" height="250"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sketchCell" id="E2r-uI-7u3" customClass="SketchCell" customModule="Peinto" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="770" reuseIdentifier="sketchCell" id="E2r-uI-7u3" customClass="SketchCell" customModule="Peinto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-7E-gA6">
-                                            <rect key="frame" x="8" y="8" width="134" height="134"/>
+                                            <rect key="frame" x="0.0" y="1" width="250" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="DGY-Br-7yI"/>
+                                                <constraint firstAttribute="height" constant="250" id="bbd-gT-BKb"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="ySR-7E-gA6" secondAttribute="bottom" id="LQv-E7-YPA"/>
-                                    <constraint firstItem="ySR-7E-gA6" firstAttribute="top" secondItem="E2r-uI-7u3" secondAttribute="topMargin" id="T93-bp-YxE"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="ySR-7E-gA6" secondAttribute="trailing" id="sIq-Rd-14V"/>
-                                    <constraint firstItem="ySR-7E-gA6" firstAttribute="leading" secondItem="E2r-uI-7u3" secondAttribute="leadingMargin" id="t2P-JJ-0GH"/>
+                                    <constraint firstAttribute="centerY" secondItem="ySR-7E-gA6" secondAttribute="centerY" constant="-1" id="YZr-gO-Cfm"/>
+                                    <constraint firstAttribute="centerX" secondItem="ySR-7E-gA6" secondAttribute="centerX" id="vjJ-X1-YFL"/>
                                 </constraints>
+                                <size key="customSize" width="250" height="250"/>
                                 <connections>
                                     <outlet property="sketchView" destination="ySR-7E-gA6" id="rJg-TB-XoM"/>
                                 </connections>

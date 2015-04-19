@@ -12,24 +12,17 @@ import Peinto
 
 class SketchGetHandlerTests: XCTestCase {
     
-//    let sketchGetHandler = SketchGetHandler()
-//    var dataHolder: AnyObject!
-//    
-//    func dataHolderCallback () {
-//        dataHolder = sketchGetHandler.sketchData
-//    }
-//    
-//    func test_get_sketches_correctly_returns_a_dictionary_object () {
-//        let expectation = expectationWithDescription("Sketch returned")
-//        sketchGetHandler.getSketches(1)
-//
-//         waitForExpectationsWithTimeout(10,
-//            handler: {error in
-//                if self.sketchGetHandler.sketchData == nil {
-//                    XCTAssertNil(error, "Got nil")
-//                }
-//            })
-//    }
+    let sketchGetHandler = SketchGetHandler()
+    
+    func test_parse_images_from_sketch_array_returns_an_array_of_ns_data_objects () {
+    
+        var linkArray = ["First Link", "Second Link"]
+        var sketchArray: NSMutableArray = [["ImageUrl": "First Link"], ["ImageUrl": "Second Link"]]
+        var parsedSketchArray = sketchGetHandler.parseImagesFromSketchArray(sketchArray)
+        
+            XCTAssertEqual(linkArray, parsedSketchArray, "Expected an array containing \(linkArray) but got \(parsedSketchArray)")
+        
+    }
     
 }
 
