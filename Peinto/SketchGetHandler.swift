@@ -29,8 +29,6 @@ public class SketchGetHandler {
         getDataTask.resume()
     }
     
-    
-    
     public func parseImagesFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
         var arrayToReturn: NSMutableArray = []
         
@@ -39,6 +37,21 @@ public class SketchGetHandler {
             var sketchURL = NSURL(string: sketchString)
             var sketchImageAsData = NSData(contentsOfURL: sketchURL!)
             arrayToReturn.addObject(sketchImageAsData!)
+        }
+        return arrayToReturn
+    }
+    
+    func parseImageLinksFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
+        var arrayToReturn: NSMutableArray = []
+        
+        for sketch in arrayOfSketches {
+            var sketchString = sketch["Url"] as! String
+            println("\(sketchString)")
+
+            sketchString = sketchString.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)!
+            println("\(sketchString)")
+            var sketchURL = NSURL(string: sketchString)
+            arrayToReturn.addObject(sketchURL!)
         }
         return arrayToReturn
     }

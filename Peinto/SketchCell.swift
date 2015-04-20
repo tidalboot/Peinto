@@ -12,4 +12,13 @@ class SketchCell: UICollectionViewCell {
     @IBOutlet var sketchView: UIImageView!
     @IBOutlet var dateCreatedLabel: UILabel!
     @IBOutlet var heartLabel: UILabel!
+    @IBOutlet var webLinkButton: UIButton!
+    
+    var webLink: NSURL!
+    
+    
+    @IBAction func openLink(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(webLink)
+    }
+
 }

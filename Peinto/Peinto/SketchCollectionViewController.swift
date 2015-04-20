@@ -18,6 +18,7 @@ class SketchCollectionViewController: UICollectionViewController {
     var imageArray: NSMutableArray = []
     var dateArray: NSMutableArray = []
     var heartArray: NSMutableArray = []
+    var webLinkArray: NSMutableArray = []
     
     override func viewDidLoad() {
         sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
@@ -43,6 +44,7 @@ class SketchCollectionViewController: UICollectionViewController {
         heartArray.addObjectsFromArray(sketchGetHandler.parseHeartsFromSketchArray(sketches) as [AnyObject])
         dateArray.addObjectsFromArray(sketchGetHandler.parseDatesFromSketchArray(sketches) as [AnyObject])
         imageArray.addObjectsFromArray(sketchGetHandler.parseImagesFromSketchArray(sketches) as [AnyObject])
+        webLinkArray.addObjectsFromArray(sketchGetHandler.parseImageLinksFromSketchArray(sketches) as [AnyObject])
         
 
         numberOfCellsToLoad = numberOfCellsToLoad + sketches.count
@@ -68,7 +70,9 @@ class SketchCollectionViewController: UICollectionViewController {
         sketchCell.sketchView.image = UIImage(data: imageArray[indexPath.item] as! NSData)
         sketchCell.dateCreatedLabel.text = "Created \(dateArray[indexPath.item])"
         sketchCell.heartLabel.text = "Hearts: \(heartArray[indexPath.item])"
+        sketchCell.webLink = webLinkArray[indexPath.item] as! NSURL
 
         return sketchCell
     }
+
 }
