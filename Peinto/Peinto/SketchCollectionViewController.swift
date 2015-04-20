@@ -13,27 +13,37 @@ class SketchCollectionViewController: UICollectionViewController {
     let sketchGetHandler = SketchGetHandler()
     private let cellReuseIdentifier = "SketchCell"
     var numberOfCellsToLoad = 0
-    var lastDate = ""
+    var oldestDate = ""
+    var newestDate = ""
     var imageArray: NSMutableArray = []
     var dateArray: NSMutableArray = []
     var heartArray: NSMutableArray = []
     
     override func viewDidLoad() {
-        sketchGetHandler.getSketches(3, fromDate: lastDate, callback: updateImageArray)
+        sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height) {
-            sketchGetHandler.getSketches(3, fromDate: lastDate, callback: updateImageArray)
-        }
-    }
 
+        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height) {
+            sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
+        }
+        
+        //---Shelved until API has been updated---
+        //Feature 1a
+    }
     
-    func updateImageArray (sketches: NSMutableArray) {
-        lastDate = sketchGetHandler.getLastDateFromSketchArray(sketches)
+    
+        //---Shelved until API has been updated---
+        //Feature 1b
+    
+    func addSketches (sketches: NSMutableArray) {
+        oldestDate = sketchGetHandler.getLastDateFromSketchArray(sketches)
+        newestDate = sketchGetHandler.getNewestDateFromSketchArray(sketches)
         heartArray.addObjectsFromArray(sketchGetHandler.parseHeartsFromSketchArray(sketches) as [AnyObject])
         dateArray.addObjectsFromArray(sketchGetHandler.parseDatesFromSketchArray(sketches) as [AnyObject])
         imageArray.addObjectsFromArray(sketchGetHandler.parseImagesFromSketchArray(sketches) as [AnyObject])
+        
 
         numberOfCellsToLoad = numberOfCellsToLoad + sketches.count
      

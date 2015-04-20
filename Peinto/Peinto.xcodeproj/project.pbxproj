@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC13B56B1AE56F3000C38F87 /* FeaturesToImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC13B56A1AE56F3000C38F87 /* FeaturesToImplement.swift */; };
 		FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */; };
 		FC34FEA01AD0549B0034C819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC34FE9E1AD0549B0034C819 /* Main.storyboard */; };
 		FC34FEA21AD0549B0034C819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC34FEA11AD0549B0034C819 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC13B56A1AE56F3000C38F87 /* FeaturesToImplement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesToImplement.swift; sourceTree = "<group>"; };
 		FC34FE951AD0549B0034C819 /* Peinto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peinto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34FE991AD0549B0034C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC34FE9A1AD0549B0034C819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				FC34FE9E1AD0549B0034C819 /* Main.storyboard */,
 				FC34FEA11AD0549B0034C819 /* Images.xcassets */,
 				FC34FE981AD0549B0034C819 /* Supporting Files */,
+				FC13B56A1AE56F3000C38F87 /* FeaturesToImplement.swift */,
 			);
 			path = Peinto;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				FC7F66321AE44FCD0074D23B /* LaunchScreenController.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
 				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,
+				FC13B56B1AE56F3000C38F87 /* FeaturesToImplement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
