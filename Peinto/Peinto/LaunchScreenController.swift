@@ -15,8 +15,6 @@ class LaunchScreenController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mainView.backgroundColor = UIColor(red: 0.941, green: 0.5, blue: 0.5, alpha: 1)
-        // Do any additional setup after loading the view.
     }
 
 

@@ -13,13 +13,7 @@ class SketchCollectionViewController: UICollectionViewController {
     let sketchGetHandler = SketchGetHandler()
     private let cellReuseIdentifier = "SketchCell"
     var numberOfCellsToLoad = 0
-    var numberOfSketchesToLoad = 3
-    var newIndexPath = 0
     var lastDate = ""
-    var returnedSketches: NSData!
-    var imageDataToUse: NSMutableArray!
-    var dateDataToUse: NSMutableArray!
-    var heartDataToUse: NSMutableArray!
     var imageArray: NSMutableArray = []
     var dateArray: NSMutableArray = []
     var heartArray: NSMutableArray = []
@@ -37,24 +31,11 @@ class SketchCollectionViewController: UICollectionViewController {
     
     func updateImageArray (sketches: NSMutableArray) {
         lastDate = sketchGetHandler.getLastDateFromSketchArray(sketches)
-        heartDataToUse = sketchGetHandler.parseHeartsFromSketchArray(sketches)
-        dateDataToUse = sketchGetHandler.parseDatesFromSketchArray(sketches)
-        imageDataToUse = sketchGetHandler.parseImagesFromSketchArray(sketches)
-        
-        for heart in heartDataToUse {
-            heartArray.addObject(heart)
-        }
-        
-        for date in dateDataToUse {
-            dateArray.addObject(date)
-        }
-        
-        for image in imageDataToUse {
-            imageArray.addObject(image)
-        }
+        heartArray.addObjectsFromArray(sketchGetHandler.parseHeartsFromSketchArray(sketches) as [AnyObject])
+        dateArray.addObjectsFromArray(sketchGetHandler.parseDatesFromSketchArray(sketches) as [AnyObject])
+        imageArray.addObjectsFromArray(sketchGetHandler.parseImagesFromSketchArray(sketches) as [AnyObject])
 
-        numberOfCellsToLoad = numberOfCellsToLoad + imageDataToUse.count
-        println("\(imageArray.count)")
+        numberOfCellsToLoad = numberOfCellsToLoad + sketches.count
      
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.collectionView!.reloadData()
@@ -75,7 +56,6 @@ class SketchCollectionViewController: UICollectionViewController {
         let sketchCell = collectionView.dequeueReusableCellWithReuseIdentifier("sketchCell", forIndexPath: indexPath) as! SketchCell
 
         sketchCell.sketchView.image = UIImage(data: imageArray[indexPath.item] as! NSData)
-        newIndexPath++
         sketchCell.dateCreatedLabel.text = "Created \(dateArray[indexPath.item])"
         sketchCell.heartLabel.text = "Hearts: \(heartArray[indexPath.item])"
 
