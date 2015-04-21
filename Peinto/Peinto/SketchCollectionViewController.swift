@@ -19,21 +19,20 @@ class SketchCollectionViewController: UICollectionViewController {
     var dateArray: NSMutableArray = []
     var heartArray: NSMutableArray = []
     var webLinkArray: NSMutableArray = []
+    var downloadAllowed = true
     
     override func viewDidLoad() {
         sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-
-        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height) {
+        if (scrollView.contentOffset.y > scrollView.contentSize.height - (scrollView.frame.size.height) * 2 && downloadAllowed) {
+            downloadAllowed = false
             sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
         }
-        
         //---Shelved until API has been updated---
         //Feature 1a
     }
-    
     
         //---Shelved until API has been updated---
         //Feature 1b
@@ -51,6 +50,7 @@ class SketchCollectionViewController: UICollectionViewController {
      
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.collectionView!.reloadData()
+            self.downloadAllowed = true
         })
     }
     
@@ -71,7 +71,7 @@ class SketchCollectionViewController: UICollectionViewController {
         sketchCell.dateCreatedLabel.text = "Created \(dateArray[indexPath.item])"
         sketchCell.heartLabel.text = "Hearts: \(heartArray[indexPath.item])"
         sketchCell.webLink = webLinkArray[indexPath.item] as! NSURL
-
+    
         return sketchCell
     }
 

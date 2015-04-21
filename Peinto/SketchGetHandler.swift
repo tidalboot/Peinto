@@ -18,6 +18,7 @@ public class SketchGetHandler {
     public func getSketches (numberOfSketchesToReturn: Int, fromDate: String, toDate: String, callback: (sketches: NSMutableArray) -> ()) {
         let apiPath = "http://www.peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)&toDate=\(toDate)&fromDate=\(fromDate)"
         println("\(apiPath)")
+        println("Sketches requested")
         let api = NSURL(string: apiPath)
         let apiSession = NSURLSession.sharedSession()
         
@@ -46,15 +47,13 @@ public class SketchGetHandler {
         
         for sketch in arrayOfSketches {
             var sketchString = sketch["Url"] as! String
-            println("\(sketchString)")
-
             sketchString = sketchString.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)!
-            println("\(sketchString)")
             var sketchURL = NSURL(string: sketchString)
             arrayToReturn.addObject(sketchURL!)
         }
         return arrayToReturn
     }
+    
     
     func parseDatesFromSketchArray (arrayOfSketches: NSMutableArray) -> NSMutableArray {
         var arrayToReturn: NSMutableArray = []
@@ -74,7 +73,6 @@ public class SketchGetHandler {
             var sketchHearts = sketch["HeartCount"] as! Int
             arrayToReturn.addObject(sketchHearts)
         }
-        
         return arrayToReturn
     }
 
