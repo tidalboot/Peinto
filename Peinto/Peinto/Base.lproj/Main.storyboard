@@ -164,9 +164,20 @@
                             <outlet property="delegate" destination="GS1-FR-JyR" id="n7b-cc-PqY"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem width="122" style="plain" systemItem="fixedSpace" id="YGh-uz-N2r"/>
+                        <barButtonItem enabled="NO" title="Home" id="DL3-X8-B6W">
+                            <connections>
+                                <action selector="homeButton:" destination="GS1-FR-JyR" id="pAv-pU-6TD"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Peinto" id="fiU-yM-ftc">
                         <barButtonItem key="backBarButtonItem" title="ペ" id="3vJ-aw-kYV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="homeButton" destination="DL3-X8-B6W" id="NdG-Jc-e5b"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dD-aV-gXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,7 +186,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Jnh-QK-veG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xpP-Oj-Ncy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="xpP-Oj-Ncy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Plk-o2-x1d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -186,6 +197,10 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="D2b-zG-HMd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
                     <connections>
                         <segue destination="GS1-FR-JyR" kind="relationship" relationship="rootViewController" id="060-WE-hre"/>
                     </connections>

@@ -10,6 +10,10 @@ import UIKit
 
 class SketchCollectionViewController: UICollectionViewController {
 
+
+
+    @IBOutlet var homeButton: UIBarButtonItem!
+    
     let sketchGetHandler = SketchGetHandler()
     private let cellReuseIdentifier = "SketchCell"
     var numberOfCellsToLoad = 0
@@ -20,6 +24,8 @@ class SketchCollectionViewController: UICollectionViewController {
     var heartArray: NSMutableArray = []
     var webLinkArray: NSMutableArray = []
     var downloadAllowed = true
+    
+    var index: NSMutableArray = []
     
     override func viewDidLoad() {
         sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
@@ -45,12 +51,12 @@ class SketchCollectionViewController: UICollectionViewController {
         imageArray.addObjectsFromArray(sketchGetHandler.parseImagesFromSketchArray(sketches) as [AnyObject])
         webLinkArray.addObjectsFromArray(sketchGetHandler.parseImageLinksFromSketchArray(sketches) as [AnyObject])
         
-
         numberOfCellsToLoad = numberOfCellsToLoad + sketches.count
      
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.collectionView!.reloadData()
             self.downloadAllowed = true
+            self.homeButton.enabled = true
         })
     }
     
@@ -71,8 +77,14 @@ class SketchCollectionViewController: UICollectionViewController {
         sketchCell.dateCreatedLabel.text = "Created \(dateArray[indexPath.item])"
         sketchCell.heartLabel.text = "Hearts: \(heartArray[indexPath.item])"
         sketchCell.webLink = webLinkArray[indexPath.item] as! NSURL
-    
+        
+        index.addObject(indexPath)
+        
         return sketchCell
+    }
+    
+    @IBAction func homeButton(sender: AnyObject) {
+        self.collectionView!.scrollToItemAtIndexPath(index[0] as! NSIndexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
     }
 
 }
