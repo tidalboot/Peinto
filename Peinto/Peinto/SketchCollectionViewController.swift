@@ -23,7 +23,7 @@ class SketchCollectionViewController: UICollectionViewController {
     var dateArray: NSMutableArray = []
     var heartArray: NSMutableArray = []
     var webLinkArray: NSMutableArray = []
-    var downloadAllowed = true
+    var downloadAllowed = false
     
     var index: NSMutableArray = []
     
@@ -32,8 +32,9 @@ class SketchCollectionViewController: UICollectionViewController {
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y > scrollView.contentSize.height - (scrollView.frame.size.height) * 2 && downloadAllowed) {
+        if (scrollView.contentOffset.y > scrollView.contentSize.height - (scrollView.frame.size.height) * 3 && downloadAllowed) {
             downloadAllowed = false
+            
             sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
         }
         //---Shelved until API has been updated---
