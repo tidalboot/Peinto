@@ -5,85 +5,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Launch Screen Controller-->
-        <scene sceneID="rZV-tb-WOU">
-            <objects>
-                <viewController id="Gwg-cU-0G3" customClass="LaunchScreenController" customModule="Peinto" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cHM-T4-Lzj"/>
-                        <viewControllerLayoutGuide type="bottom" id="gXl-Xu-f1s"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dmD-Ty-PTz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P E I N T O" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-nG-VYF">
-                                <rect key="frame" x="11" y="246" width="298" height="76"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6w-Vt-9eK" userLabel="Top Filler">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                <color key="backgroundColor" red="0.94117647058823528" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0fK-PJ-tDe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHH-sM-iKR" userLabel="Bottom Filler">
-                                <rect key="frame" x="0.0" y="468" width="320" height="100"/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="COr-DN-mjQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gf-LW-B5B">
-                                <rect key="frame" x="110" y="341" width="100" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start browsing">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xpP-Oj-Ncy" kind="modal" modalTransitionStyle="crossDissolve" id="on5-UL-jJb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="g6d-nG-VYF" secondAttribute="centerX" id="0jq-dk-tng"/>
-                            <constraint firstItem="y6w-Vt-9eK" firstAttribute="width" secondItem="dmD-Ty-PTz" secondAttribute="width" id="Fx7-Oq-7cR"/>
-                            <constraint firstItem="gXl-Xu-f1s" firstAttribute="top" secondItem="CHH-sM-iKR" secondAttribute="bottom" id="NKJ-tM-sLJ"/>
-                            <constraint firstAttribute="centerX" secondItem="3gf-LW-B5B" secondAttribute="centerX" id="S3t-5M-ibm"/>
-                            <constraint firstItem="3gf-LW-B5B" firstAttribute="top" secondItem="g6d-nG-VYF" secondAttribute="bottom" constant="19" id="ZQ7-B1-UtW"/>
-                            <constraint firstAttribute="centerX" secondItem="CHH-sM-iKR" secondAttribute="centerX" id="djY-hR-mpD"/>
-                            <constraint firstAttribute="centerX" secondItem="y6w-Vt-9eK" secondAttribute="centerX" id="hg9-4v-0MM"/>
-                            <constraint firstItem="CHH-sM-iKR" firstAttribute="width" secondItem="dmD-Ty-PTz" secondAttribute="width" id="nUl-BL-pnE"/>
-                            <constraint firstAttribute="centerY" secondItem="g6d-nG-VYF" secondAttribute="centerY" id="sMf-1S-EB3"/>
-                            <constraint firstItem="y6w-Vt-9eK" firstAttribute="top" secondItem="cHM-T4-Lzj" secondAttribute="bottom" id="uep-dA-jaY"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="mainView" destination="dmD-Ty-PTz" id="QYh-07-5jc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="unA-NT-KCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1860" y="218"/>
-        </scene>
         <!--Peinto-->
         <scene sceneID="YVj-MP-xrS">
             <objects>
                 <collectionViewController id="GS1-FR-JyR" customClass="SketchCollectionViewController" customModule="Peinto" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BM2-iJ-IxY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="20" id="98a-Dt-Rfg">
