@@ -15,7 +15,7 @@ public class SketchGetHandler {
         
     }
     
-    public func getSketches (numberOfSketchesToReturn: Int, fromDate: String, toDate: String, callback: (sketches: NSMutableArray) -> ()) {
+    public func getSketches (numberOfSketchesToReturn: Int, fromDate: String, toDate: String, callback: (sketches: NSMutableArray, errorOccured: Bool) -> ()) {
         let apiPath = "http://www.peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)&toDate=\(toDate)&fromDate=\(fromDate)"
         println("\(apiPath)")
         println("Sketches requested")
@@ -24,8 +24,11 @@ public class SketchGetHandler {
         
         let getDataTask = apiSession.dataTaskWithURL(api!,
             completionHandler: {(data, response, error) -> Void in
+                if error != nil {
+                    return callback(sketches: [], errorOccured: true)
+                }
                 var sketches: NSMutableArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSMutableArray
-                return callback(sketches: sketches)
+                return callback(sketches: sketches, errorOccured: false)
         })
         getDataTask.resume()
     }
