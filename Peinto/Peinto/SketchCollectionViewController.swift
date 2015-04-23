@@ -24,9 +24,9 @@ class SketchCollectionViewController: UICollectionViewController {
     var dateArray: NSMutableArray = []
     var heartArray: NSMutableArray = []
     var webLinkArray: NSMutableArray = []
+    var index: NSMutableArray = []
     var downloadAllowed = false
     
-    var index: NSMutableArray = []
     
     override func viewDidLoad() {
         sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)

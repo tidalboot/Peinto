@@ -50,8 +50,10 @@ public class SketchGetHandler {
         
         for sketch in arrayOfSketches {
             var sketchString = sketch["Url"] as! String
-            sketchString = sketchString.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)!
+            println("\(sketchString)")
+            sketchString = sketchString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             var sketchURL = NSURL(string: sketchString)
+            println("\(sketchURL)")
             arrayToReturn.addObject(sketchURL!)
         }
         return arrayToReturn

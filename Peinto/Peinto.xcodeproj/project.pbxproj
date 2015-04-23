@@ -15,7 +15,6 @@
 		FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */; };
 		FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */; };
 		FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */; };
-		FC7F66321AE44FCD0074D23B /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F66311AE44FCD0074D23B /* LaunchScreenController.swift */; };
 		FC7F66381AE456CB0074D23B /* Peinto_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F66371AE456CB0074D23B /* Peinto_Logo.png */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandler.swift; sourceTree = "<group>"; };
 		FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewController.swift; sourceTree = "<group>"; };
 		FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCell.swift; sourceTree = "<group>"; };
-		FC7F66311AE44FCD0074D23B /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		FC7F66371AE456CB0074D23B /* Peinto_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Peinto_Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */,
-				FC7F66311AE44FCD0074D23B /* LaunchScreenController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 			files = (
 				FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */,
 				FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */,
-				FC7F66321AE44FCD0074D23B /* LaunchScreenController.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
 				FC289E811AE812CB008551EF /* ScrollHandler.swift in Sources */,
 				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,

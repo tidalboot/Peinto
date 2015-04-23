@@ -12,7 +12,7 @@ import UIKit
 class ScrollHandler {
     
     func secondSketchViewed (viewToCheck: UIScrollView) -> Bool {
-        if viewToCheck.contentOffset.y > viewToCheck.contentSize.height - (viewToCheck.frame.size.height) {
+        if viewToCheck.contentOffset.y > viewToCheck.contentSize.height - (viewToCheck.frame.size.height * 3) {
             return true
         }
         return false
