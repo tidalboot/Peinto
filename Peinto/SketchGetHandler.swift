@@ -16,14 +16,13 @@ public class SketchGetHandler {
     }
     
     public func getSketches (numberOfSketchesToReturn: Int, fromDate: String, toDate: String, callback: (sketches: NSMutableArray, errorOccured: Bool) -> ()) {
-        let apiPath = "http://www.peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)&toDate=\(toDate)&fromDate=\(fromDate)"
-        println("\(apiPath)")
-        println("Sketches requested")
+        let apiPath = "http://peinto.org/api/sketch?numberofSketches=\(numberOfSketchesToReturn)&toDate=\(toDate)&fromDate=\(fromDate)"
         let api = NSURL(string: apiPath)
         let apiSession = NSURLSession.sharedSession()
         
         let getDataTask = apiSession.dataTaskWithURL(api!,
             completionHandler: {(data, response, error) -> Void in
+                println("\(error)")
                 if error != nil {
                     return callback(sketches: [], errorOccured: true)
                 }

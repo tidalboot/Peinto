@@ -26,19 +26,30 @@ class SketchCollectionViewController: UICollectionViewController {
     var webLinkArray: NSMutableArray = []
     var index: NSMutableArray = []
     var downloadAllowed = false
-    
+    var loadingIndicator = UIActivityIndicatorView()
+
     
     override func viewDidLoad() {
         sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
+        var heightOfFrame = self.view.frame.size.height - 110
+        var centerOfScreen = self.view.frame.width / 2
+        loadingIndicator.center = CGPointMake(centerOfScreen + loadingIndicator.frame.size.width, heightOfFrame)
+        self.view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollHandler.secondSketchViewed(scrollView) && downloadAllowed {
             downloadAllowed = false
             sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
-        }
-        if scrollHandler.pulledDownFromTopOfScreen(scrollView) {
+        } else if scrollHandler.pulledDownFromTopOfScreen(scrollView) {
             sketchGetHandler.getSketches(10, fromDate: newestDate, toDate: "", callback: newestSketchChecker)
+        }
+        
+        if scrollHandler.swipedToBottomOfScreen(scrollView) {
+            loadingIndicator.hidden = false
+        } else {
+            loadingIndicator.hidden = true
         }
 
     }
@@ -100,7 +111,7 @@ class SketchCollectionViewController: UICollectionViewController {
             webLinkArray.addObjectsFromArray(sketchGetHandler.parseImageLinksFromSketchArray(sketches) as [AnyObject])
             
             numberOfCellsToLoad = numberOfCellsToLoad + sketches.count
-            
+                        
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.collectionView!.reloadData()
                 self.downloadAllowed = true
@@ -128,6 +139,8 @@ class SketchCollectionViewController: UICollectionViewController {
         sketchCell.heartLabel.text = "Hearts: \(heartArray[indexPath.item])"
         sketchCell.webLink = webLinkArray[indexPath.item] as! NSURL
         index.addObject(indexPath)
+        
+        loadingIndicator.hidden = true
         
         return sketchCell
     }

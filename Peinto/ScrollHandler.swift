@@ -25,6 +25,13 @@ class ScrollHandler {
         return false
     }
     
+    func swipedToBottomOfScreen (viewToCheck: UIScrollView) -> Bool {
+        if viewToCheck.contentOffset.y > (viewToCheck.contentSize.height - viewToCheck.frame.size.height) {
+            return true
+        }
+        return false
+    }
+    
     func scrollToTopOfScreen (viewToSCroll: UICollectionView, indexArray: NSMutableArray) {
         viewToSCroll.scrollToItemAtIndexPath(indexArray[0] as! NSIndexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
     }
