@@ -10,10 +10,7 @@ import UIKit
 
 class SketchCollectionViewController: UICollectionViewController {
 
-
-
     @IBOutlet var homeButton: UIBarButtonItem!
-    
     let sketchGetHandler = SketchGetHandler()
     let scrollHandler = ScrollHandler()
     private let cellReuseIdentifier = "SketchCell"
@@ -27,15 +24,15 @@ class SketchCollectionViewController: UICollectionViewController {
     var index: NSMutableArray = []
     var downloadAllowed = false
     var loadingIndicator = UIActivityIndicatorView()
-
+    
     
     override func viewDidLoad() {
-        sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
-        var heightOfFrame = self.view.frame.size.height - 110
-        var centerOfScreen = self.view.frame.width / 2
-        loadingIndicator.center = CGPointMake(centerOfScreen + loadingIndicator.frame.size.width, heightOfFrame)
-        self.view.addSubview(loadingIndicator)
+        sketchGetHandler.getSketches(10, fromDate: "", toDate: "2015-05-12T05:19:40.493", callback: addSketches)
+        
+        loadingIndicator.center.x = self.view.horizontalCenterOfView(self.view)
+        loadingIndicator.center.y = self.view.offsetFromBottomOfScreen(self.view, amountToOffsetBy: 110)
         loadingIndicator.startAnimating()
+        self.view.addSubview(loadingIndicator)
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -43,7 +40,7 @@ class SketchCollectionViewController: UICollectionViewController {
             downloadAllowed = false
             sketchGetHandler.getSketches(3, fromDate: "", toDate: oldestDate, callback: addSketches)
         } else if scrollHandler.pulledDownFromTopOfScreen(scrollView) {
-            sketchGetHandler.getSketches(10, fromDate: newestDate, toDate: "", callback: newestSketchChecker)
+            sketchGetHandler.getSketches(100, fromDate: newestDate, toDate: "", callback: newestSketchChecker)
         }
         
         if scrollHandler.swipedToBottomOfScreen(scrollView) {
@@ -51,7 +48,6 @@ class SketchCollectionViewController: UICollectionViewController {
         } else {
             loadingIndicator.hidden = true
         }
-
     }
     
     func newestSketchChecker (sketches: NSMutableArray, errorOccured: Bool) {
@@ -64,12 +60,12 @@ class SketchCollectionViewController: UICollectionViewController {
             var heartArrayHolder = sketchGetHandler.parseHeartsFromSketchArray(sketches)
             var webLinkArrayHolder = sketchGetHandler.parseImageLinksFromSketchArray(sketches)
 
-            if sketches.count > 6 {
-                imageArray = []
-                dateArray = []
-                heartArray = []
-                webLinkArray = []
-            }
+//            if sketches.count > 6 {
+//                imageArray = []
+//                dateArray = []
+//                heartArray = []
+//                webLinkArray = []
+//            }
  
             for image in imageArrayHolder {
                 imageArray.insertObject(image, atIndex: 0)
@@ -92,7 +88,6 @@ class SketchCollectionViewController: UICollectionViewController {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.collectionView!.reloadData()
             })
-            
         }
     }
 

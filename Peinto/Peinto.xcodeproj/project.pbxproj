@@ -15,6 +15,7 @@
 		FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */; };
 		FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */; };
 		FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */; };
+		FC62C73C1AEEBBE80022754C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC62C73B1AEEBBE80022754C /* UIView.swift */; };
 		FC7F66381AE456CB0074D23B /* Peinto_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7F66371AE456CB0074D23B /* Peinto_Logo.png */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		FC34FEBD1AD0583E0034C819 /* SketchGetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchGetHandler.swift; sourceTree = "<group>"; };
 		FC47F5971AD1C04E00CFA035 /* SketchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewController.swift; sourceTree = "<group>"; };
 		FC5B73BD1AE1801D0052AE90 /* SketchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCell.swift; sourceTree = "<group>"; };
+		FC62C73B1AEEBBE80022754C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FC7F66371AE456CB0074D23B /* Peinto_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Peinto_Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		FC34FE971AD0549B0034C819 /* Peinto */ = {
 			isa = PBXGroup;
 			children = (
+				FC62C7391AEEBBCC0022754C /* Extensions */,
 				FC7F66361AE456C10074D23B /* Images */,
 				FC7F66301AE44FB60074D23B /* ViewControllers */,
 				FC34FEBC1AD057CF0034C819 /* Handlers */,
@@ -128,6 +131,14 @@
 			);
 			name = Handlers;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		FC62C7391AEEBBCC0022754C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC62C73B1AEEBBE80022754C /* UIView.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		FC7F66301AE44FB60074D23B /* ViewControllers */ = {
@@ -248,6 +259,7 @@
 			files = (
 				FC47F5981AD1C04E00CFA035 /* SketchCollectionViewController.swift in Sources */,
 				FC5B73BE1AE1801D0052AE90 /* SketchCell.swift in Sources */,
+				FC62C73C1AEEBBE80022754C /* UIView.swift in Sources */,
 				FC34FE9B1AD0549B0034C819 /* AppDelegate.swift in Sources */,
 				FC289E811AE812CB008551EF /* ScrollHandler.swift in Sources */,
 				FC34FEBE1AD0583E0034C819 /* SketchGetHandler.swift in Sources */,
